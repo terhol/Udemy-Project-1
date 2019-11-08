@@ -10,7 +10,7 @@ public class Main {
 
         }
         catch(Exception e){
-            e.printStackTrace();
+            ExceptionHandler.handleException(e);
         }
 
     }
