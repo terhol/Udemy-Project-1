@@ -31,8 +31,12 @@ public class HRInterface {
         String firstName = keyboard.next();
         System.out.println("Type surname:");
         String surname = keyboard.next();
-        System.out.println("Type department (sales, development, accounting), alternatively leave blank:");
-        String department = keyboard.next();
+        String department = "";
+        while (!department.equals("sales") && !department.equals("development") && !department.equals("accounting")) {
+            System.out.println("Type department (sales, development, accounting), alternatively leave blank:");
+            department = keyboard.next();
+        }
+
 
         if (!database.doesEmployeeExist(firstName, surname)) {
             database.saveNewEmployee(firstName, surname, department);
