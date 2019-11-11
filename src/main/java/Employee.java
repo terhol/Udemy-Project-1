@@ -1,8 +1,10 @@
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.apache.commons.lang3.RandomStringUtils;
 @Getter
 @Setter
+@NoArgsConstructor
 public class Employee {
 
     private String name;
@@ -31,6 +33,10 @@ public class Employee {
 
     private String generatePassword(){
         return RandomStringUtils.random(8, true, true);
+    }
+
+    public void displayInfo(){
+        System.out.println(String.format("Employee:%s %s. Email: %s. Email capacity: %d", name, surname, email, capacity));
     }
 
 

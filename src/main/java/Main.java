@@ -5,10 +5,7 @@ public class Main {
         EmailDatabase database = new EmailDatabase();
 
         try{
-            System.out.println(database.tryConnection());
-            database.saveNewEmployee("Samantha", "Smith", "accountant");
-            database.changePassword("john.smith@accountant.company.com", "1234567");
-
+            database.addAlternateEmail("john.smith@accountant.company.com", "aaa@a.com");
         }
         catch(Exception e){
             ExceptionHandler.handleException(e);
