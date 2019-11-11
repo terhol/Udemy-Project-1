@@ -1,3 +1,5 @@
+
+
 import java.sql.*;
 
 public class EmailDatabase {
@@ -36,6 +38,19 @@ System.out.println("Employee with this name and surname already exists - please 
        }
    }
 
+   public void changePassword(String email, String newPassword)throws Exception{
+       String sql = "UPDATE email SET password=? WHERE email=?";
+//TODO: Decide if employee exists
+       Connection connection = DriverManager.getConnection(URL, USER,PASSWORD);
+       PreparedStatement statement = connection.prepareStatement(sql);
+       statement.setString(1, newPassword);
+       statement.setString(2, email);
+       statement.executeUpdate();
+       statement.close();
+       connection.close();
+
+   }
+
    private boolean doesEmployeeExist(String name, String surname) throws Exception{
        Connection connection = DriverManager.getConnection(URL, USER,PASSWORD);
        String sql = "SELECT * FROM email WHERE firstname = ? AND surname = ?";
@@ -50,6 +65,5 @@ System.out.println("Employee with this name and surname already exists - please 
        statement.close();
        connection.close();
        return doesExist;
-
    }
 }

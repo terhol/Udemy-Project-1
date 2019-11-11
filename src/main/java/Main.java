@@ -6,7 +6,8 @@ public class Main {
 
         try{
             System.out.println(database.tryConnection());
-            database.saveNewEmployee("John", "Smith", "accountant");
+            database.saveNewEmployee("Samantha", "Smith", "accountant");
+            database.changePassword("john.smith@accountant.company.com", "1234567");
 
         }
         catch(Exception e){
