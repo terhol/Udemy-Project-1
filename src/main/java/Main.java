@@ -1,13 +1,12 @@
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        EmailDatabase database = new EmailDatabase();
+        try {
 
-        try{
-            database.addAlternateEmail("john.smith@accountant.company.com", "aaa@a.com");
-        }
-        catch(Exception e){
+            HRInterface.startApplication();
+
+        } catch (Exception e) {
             ExceptionHandler.handleException(e);
         }
 
